@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawsitively Yours - Pet Adoption Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-paw"></i> Pawsitively Yours</h1>
+                <p>Pet Adoption Platform</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#pets"><i class="fas fa-dog"></i> Pets</a></li>
+                    <li><a href="#adopt"><i class="fas fa-heart"></i> Adopt</a></li>
+                    <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="#contact"><i class="fas fa-phone"></i> Contact</a></li>
+                    <li><a href="#login" id="auth-link"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                    <li><a href="#" id="dark-mode-toggle"><i class="fas fa-moon"></i> Dark Mode</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Login/Register Modal -->
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="auth-container">
+                <div class="auth-header">
+                    <h2 id="auth-title">User Login</h2>
+                </div>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="username"><i class="fas fa-user"></i> Username</label>
+                        <input type="text" id="username" placeholder="Enter your username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password"><i class="fas fa-lock"></i> Password</label>
+                        <input type="password" id="password" placeholder="Enter your password" required>
+                    </div>
+                    <button type="submit" class="btn login-btn">Login</button>
+                </form>
+                <div class="auth-footer">
+                    <p>Don't have an account? <a href="#" id="show-register">Register here</a></p>
+                </div>
+                
+                <!-- Registration Form (Hidden by default) -->
+                <form id="register-form" style="display: none;">
+                    <div class="form-group">
+                        <label for="reg-name"><i class="fas fa-user"></i> Full Name</label>
+                        <input type="text" id="reg-name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-username"><i class="fas fa-user-tag"></i> Username</label>
+                        <input type="text" id="reg-username" placeholder="Choose a username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-email"><i class="fas fa-envelope"></i> Email</label>
+                        <input type="email" id="reg-email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-password"><i class="fas fa-lock"></i> Password</label>
+                        <input type="password" id="reg-password" placeholder="Create a password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-phone"><i class="fas fa-phone"></i> Phone Number</label>
+                        <input type="tel" id="reg-phone" placeholder="Enter your phone number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-location"><i class="fas fa-map-marker-alt"></i> City</label>
+                        <select id="reg-location" required>
+                            <option value="">Select your city</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Hyderabad">Hyderabad</option>
+                            <option value="Ahmedabad">Ahmedabad</option>
+                            <option value="Chennai">Chennai</option>
+                            <option value="Kolkata">Kolkata</option>
+                            <option value="Pune">Pune</option>
+                            <option value="Jaipur">Jaipur</option>
+                            <option value="Lucknow">Lucknow</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn register-btn">Register</button>
+                </form>
+                <div class="auth-footer">
+                    <p>Already have an account? <a href="#" id="show-login">Login here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Find Your Perfect Furry Companion</h2>
+                    <p>Connecting loving families with adorable pets in need of forever homes across India</p>
+                    <button id="cta-button" class="btn primary-btn">Find Your Pet</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <div class="container">
+                <h2>Why Adopt From Us?</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-heart feature-icon"></i>
+                        <h3>Loving Companions</h3>
+                        <p>Find your perfect furry friend ready for adoption.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-search feature-icon"></i>
+                        <h3>Advanced Search</h3>
+                        <p>Filter pets by type, breed, age, and location.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-shield-alt feature-icon"></i>
+                        <h3>Vet Verified</h3>
+                        <p>All pets are health checked and vaccinated.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-home feature-icon"></i>
+                        <h3>Forever Homes</h3>
+                        <p>We ensure responsible and loving adoptions.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-rupee-sign feature-icon"></i>
+                        <h3>Affordable Process</h3>
+                        <p>Transparent adoption fees with no hidden costs.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-headset feature-icon"></i>
+                        <h3>Post-Adoption Support</h3>
+                        <p>Guidance and support after adoption.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Dashboard (Hidden by default) -->
+    <div id="dashboard" class="dashboard" style="display: none;">
+        <div class="container">
+            <h2 class="section-title">Pet Adoption Dashboard</h2>
+            
+            <div class="tabs">
+                <button class="tab-button active" data-tab="pets-tab"><i class="fas fa-paw"></i> Available Pets</button>
+                <button class="tab-button" data-tab="adopt-tab"><i class="fas fa-heart"></i> Adoption Requests</button>
+                <button class="tab-button" data-tab="search-tab"><i class="fas fa-search"></i> Search Pets</button>
+                <button class="tab-button" data-tab="profile-tab"><i class="fas fa-user"></i> My Profile</button>
+            </div>
+            
+            <!-- Available Pets Tab -->
+            <div id="pets-tab" class="tab-content active">
+                <h3>Available Pets for Adoption</h3>
+                <div class="filters">
+                    <div class="filter-group">
+                        <label for="pet-type">Pet Type:</label>
+                        <select id="pet-type">
+                            <option value="all">All Types</option>
+                            <option value="dog">Dog</option>
+                            <option value="cat">Cat</option>
+                            <option value="bird">Bird</option>
+                            <option value="rabbit">Rabbit</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="pet-breed">Breed:</label>
+                        <select id="pet-breed">
+                            <option value="all">All Breeds</option>
+                            <option value="labrador">Labrador</option>
+                            <option value="german_shepherd">German Shepherd</option>
+                            <option value="persian">Persian</option>
+                            <option value="siamese">Siamese</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="pet-age">Age:</label>
+                        <select id="pet-age">
+                            <option value="all">All Ages</option>
+                            <option value="puppy">Puppy/Kitten (&lt;1 year)</option>
+                            <option value="young">Young (1-3 years)</option>
+                            <option value="adult">Adult (3-7 years)</option>
+                            <option value="senior">Senior (7+ years)</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="pet-location">Location:</label>
+                        <select id="pet-location">
+                            <option value="all">All Locations</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Hyderabad">Hyderabad</option>
+                            <option value="Ahmedabad">Ahmedabad</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="pet-grid" id="pet-grid">
+                    <!-- Pets will be populated by JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Adoption Requests Tab -->
+            <div id="adopt-tab" class="tab-content">
+                <h3>Your Adoption Requests</h3>
+                <div class="adoption-requests" id="adoption-requests">
+                    <!-- Adoption requests will be populated by JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Search Pets Tab -->
+            <div id="search-tab" class="tab-content">
+                <h3>Search for Pets</h3>
+                <form class="search-form" id="search-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="search-type">Pet Type</label>
+                            <select id="search-type">
+                                <option value="all">Any Type</option>
+                                <option value="dog">Dog</option>
+                                <option value="cat">Cat</option>
+                                <option value="bird">Bird</option>
+                                <option value="rabbit">Rabbit</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="search-breed">Breed</label>
+                            <input type="text" id="search-breed" placeholder="Enter breed (optional)">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="search-age">Age Range</label>
+                            <select id="search-age">
+                                <option value="all">Any Age</option>
+                                <option value="puppy">&lt; 1 year</option>
+                                <option value="young">1-3 years</option>
+                                <option value="adult">3-7 years</option>
+                                <option value="senior">7+ years</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="search-location">Location</label>
+                            <select id="search-location">
+                                <option value="all">All Locations</option>
+                                <option value="Mumbai">Mumbai</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Bangalore">Bangalore</option>
+                                <option value="Hyderabad">Hyderabad</option>
+                                <option value="Ahmedabad">Ahmedabad</option>
+                                <option value="Chennai">Chennai</option>
+                                <option value="Kolkata">Kolkata</option>
+                                <option value="Pune">Pune</option>
+                                <option value="Jaipur">Jaipur</option>
+                                <option value="Lucknow">Lucknow</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn primary-btn">Search Pets</button>
+                </form>
+                <div class="search-results" id="search-results">
+                    <!-- Search results will be populated by JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Profile Tab -->
+            <div id="profile-tab" class="tab-content">
+                <h3>My Profile</h3>
+                <form class="profile-form" id="profile-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="profile-name">Full Name</label>
+                            <input type="text" id="profile-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="profile-username">Username</label>
+                            <input type="text" id="profile-username" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="profile-email">Email</label>
+                            <input type="email" id="profile-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="profile-phone">Phone</label>
+                            <input type="tel" id="profile-phone" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="profile-location">City</label>
+                            <select id="profile-location" required>
+                                <option value="">Select your city</option>
+                                <option value="Mumbai">Mumbai</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Bangalore">Bangalore</option>
+                                <option value="Hyderabad">Hyderabad</option>
+                                <option value="Ahmedabad">Ahmedabad</option>
+                                <option value="Chennai">Chennai</option>
+                                <option value="Kolkata">Kolkata</option>
+                                <option value="Pune">Pune</option>
+                                <option value="Jaipur">Jaipur</option>
+                                <option value="Lucknow">Lucknow</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="profile-adoption-date">Member Since</label>
+                            <input type="text" id="profile-adoption-date" readonly>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn update-btn">Update Profile</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Pawsitively Yours</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Pawsitively Yours is India's leading pet adoption platform dedicated to connecting loving families with adorable pets in need of forever homes. Our mission is to reduce pet homelessness and promote responsible pet ownership across India.</p>
+                    <p>Founded in 2023, we've successfully facilitated over 5,000 adoptions nationwide, partnering with animal shelters, rescuers, and veterinary clinics in major Indian cities including Mumbai, Delhi, Bangalore, Hyderabad, and Chennai.</p>
+                    <p>Every pet on our platform is health-checked, vaccinated, and spayed/neutered before being made available for adoption. We also provide post-adoption support to ensure successful transitions for both pets and families.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1517423568366-8b83523034fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Happy family with adopted dog">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>Have questions about pet adoption or need assistance? Reach out to us!</p>
+                    <div class="contact-details">
+                        <p><i class="fas fa-map-marker-alt"></i> Mumbai, Maharashtra, India</p>
+                        <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                        <p><i class="fas fa-envelope"></i> info@pawsitivelyyours.in</p>
+                        <p><i class="fas fa-clock"></i> Mon-Sat: 9AM - 7PM, Sun: 10AM - 5PM</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send us a Message</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="contact-name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="contact-email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="contact-phone" placeholder="Your Phone">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="contact-message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn primary-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Pawsitively Yours</h3>
+                    <p>India's trusted pet adoption platform connecting loving families with pets in need.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Mumbai, Maharashtra</p>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-envelope"></i> info@pawsitivelyyours.in</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#pets">Pets</a></li>
+                        <li><a href="#adopt">Adopt</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Pawsitively Yours. All rights reserved. | Made with <i class="fas fa-heart"></i> for pets across India</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
